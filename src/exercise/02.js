@@ -35,7 +35,7 @@ const useAsync = (callback, initialState, dependencies) => {
     const promise = callback();
 
     if (!promise) {
-      return
+      return;
     }
 
     dispatch({ type: 'pending' });
@@ -57,7 +57,7 @@ const useAsync = (callback, initialState, dependencies) => {
 const PokemonInfo = ({ pokemonName }) => {
   const state = useAsync(() => {
     if (!pokemonName) {
-      return
+      return;
     }
 
     return fetchPokemon(pokemonName);
